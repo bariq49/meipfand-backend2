@@ -9,6 +9,6 @@ router.get("/", (_:Request, res:Response) => {
   res.status(200).json(new APIResponse(200, "admin service is working", {}));
 });
 
-router.post("/collector-donor", VerifyAccessTokenMiddleware, DonorCollectorController);
+router.get("/collector-donor", VerifyAccessTokenMiddleware, DonorCollectorController);
 
 export const adminRouter = router;
