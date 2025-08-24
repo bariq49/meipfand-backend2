@@ -14,6 +14,8 @@ router.get("/", (_: Request, res: Response) => {
   res.status(200).json(new APIResponse(200, "packages service is working", {}));
 });
 
+
+
 router.get("/all-packages", VerifyAccessTokenMiddleware, GetPackagesController);
 router.post("/create-package", VerifyAccessTokenMiddleware, CreatePackageController);
 router.post("/update-package", VerifyAccessTokenMiddleware, UpdatePackageController);
